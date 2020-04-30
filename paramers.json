@@ -1,0 +1,21 @@
+{
+  "char_word2vec_file": ["./model/word2vec/sent_char_rem.txt_model_300.vector"],
+  "char_word_freque_file": "./data/sent_char_rem/word_frequent.txt",
+  "char_model_name": "./model/word2vec/sent_char_rem.txt_model_300.model",
+
+  "word_word2vec_file": ["./model/word2vec/sent_word_rem.txt_model_300.vector",
+                        "./model/word2vec/sent_word_rem.txt_model_300.model.wv.vectors.npy"],
+  "word_word_freque_file": "./data/sent_word_rem/word_frequent.txt",
+  "word_model_name": "./model/word2vec/sent_word_rem.txt_model_300.model",
+
+  "word2vec_path": "./data/new_sent_word_rem/",
+  "model_config": "./Quick_thoughts/word_train.json",
+  "input_file_pattern": "./output/second_data/new_sent_word_rem/train-?????-of-00010",
+
+  "vocab_file": "./data/new_sent_word_rem/vocab.txt",
+  "checkpoint_path": "./model/train/second_train/new_sent_word_rem/transformer/",
+  "char_vocab_size": 9592,
+  "word_vocab_size": 20001,
+  "emb_file": ""
+
+}

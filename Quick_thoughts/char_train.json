@@ -1,0 +1,18 @@
+{
+	"encoder": "gru",
+	"encoder_dim": 1200,
+	"bidir": true,
+	"case_sensitive": true,
+	"checkpoint_path": "./model/train/second_train/sent_char_rem",
+	"vocab_configs": [
+	{
+		"mode": "trained",
+		"name": "word_embedding",
+		"cap": false,
+		"dim": 300,
+		"size": 9592,
+		"vocab_file": "vocab.txt",
+		"embs_file": "emb.txt"
+	}
+	]
+}
