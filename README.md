@@ -413,13 +413,17 @@
        |基于词向量的Quick-Thoughts模型|0.885814|0.647385|31443.50(8.7h)|9192.68|
        |基于字向量的Transformer模型|0.999912|0.725537|47057.17(13h)|8854.41|
        |基于词向量的Transformer模型|0.999942|0.575241|72569.82(20h)|8830.47|
-       |融合Transformer的Quick-Thought模型| | |31274.17(8.7h)+47057.17(13h)||
-       |融合Transformer的Quick-Thought模型|||31443.50(8.7h)+72569.82(20h)|
+       |融合Transformer的Quick-Thought模型（未分词）|0.999464|0.63471|31274.17(8.7h)+47057.17(13h)|9397.37|
+       |融合Transformer的Quick-Thought模型（分词）|0.999164|0.64511|31443.50(8.7h)+72569.82(20h)|9328.97|
        
      * 结论：
           1. 两个编码器全都随机初始化词向量后，Quick-Thoughts的性能下降。
              并且基于字向量的模型比基于词向量的模型效果较差。
           2. 仅用Transformer编码器，基于字向量的模型效果较好，基于词向量的模型效果特别差。
+          3. 融合后的模型无论是基于词向量还是字向量，与融合前的Quick-thoughts算法相比，没有显著的提升。
+          4. 融合前后的Quick-thoughts算法，基于字向量的模型效果都比基于词向量的模型效果差，可能是因为Quick-thoughts算法没有
+             输入预先训练的词向量，还有融合后句向量的维度变为2700，对模型的结果也有一定的影响，但是由于计算条件的限制无法对
+             句向量的维度进行探索。
    
 
 ### 三、其它
@@ -486,10 +490,9 @@
             2. 删除掉最大值和最小值,然后再进行平均
    9. 第二次重新分句后没有训练词向量和字向量文件，quick-thoughts算法只能全部随机初始化，效果较差。
    
-###五、 参考链接
-   https://blog.csdn.net/CiciliarCai/article/details/52948275
+### 四、 参考链接
+   1. [维基百科](https://blog.csdn.net/CiciliarCai/article/details/52948275)
+   2. [加权平均算法](https://github.com/PrincetonML/SIF)
+   3. [Transformer](https://github.com/Kyubyong/transformer)
+   4. [Quick-thoughts算法](https://github.com/jinjiajia/Quick_Thought)
    
-#目标：
-    今日任务：
-        预测融合后的模型效果
-        统计实验时间和结果
